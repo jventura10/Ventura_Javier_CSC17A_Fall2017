@@ -1,7 +1,7 @@
 /*
  * File:   main.cpp
  * Author: Javier Ventura
- * Purpose: 
+ * Purpose: Drop Lowest Score from array of scores when taking average
  * Created on September 26, 2017, 9:04 PM
  */
 
