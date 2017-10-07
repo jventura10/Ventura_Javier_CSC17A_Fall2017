@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     //Declare Variables
     Weather weather[NUM_MONTHS];
     Months month;
-    int tot=0,high=0,low=50;
+    float tot=0,high=0,low=50;
     float avg=0;
     float avgRfll;
     float avgAvg;
