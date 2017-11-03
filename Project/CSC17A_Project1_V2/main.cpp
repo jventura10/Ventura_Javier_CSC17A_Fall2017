@@ -2,7 +2,8 @@
  * File:   main.cpp
  * Author: Javier Ventura
  * Purpose: CSC 17A Project 1
- * 
+ * Includes Binary File Concepts, V3 will add turn-based play to use 
+ * structures with arrays and functions as well as memory allocation
  * Created on October 31, 2017, 6:10 PM
  */
 
@@ -57,7 +58,9 @@ int main(int argc, char** argv) {
         
     }while(play=true);                                                                                                                     
     
-    fout.open("Stats.dat",ios::)
+    //Writing points to a binary file
+    fout.open("Stats.dat",ios::out|ios::binary);
+    fout.put(points);
     
     
     return 0;
