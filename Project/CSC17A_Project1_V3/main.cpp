@@ -7,13 +7,13 @@
  * Created on October 31, 2017, 6:10 PM
  */
 
-#include <cstdlib>  //C Standard Library
-#include <iostream> //Input and Output Library
-#include <fstream>  //Input and Output to Files
-#include <string.h>   //String Library
-#include <cstring>    //C String Library
+#include <cstdlib>  // C Standard Library
+#include <iostream> // Input and Output Library
+#include <fstream>  // Input and Output to Files
+#include <string.h>   // String Library
+#include <cstring>    // C String Library
 
-#include "Player.h"
+#include "Player.h"     // Include Player Header File with Player Structure
 
 using namespace std;
 
