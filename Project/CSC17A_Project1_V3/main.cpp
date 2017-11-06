@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
     cout<<"How Many Players: ";
     cin>>users;
     
-    x=new int[users];
+    x=new Player[users];
     
     for(int i=0;i<users;i++){
         cout<<"Enter Player "<<i+1<<" Name: ";
@@ -61,14 +61,15 @@ int main(int argc, char** argv) {
                 case 1:{
                     cout<<"Rolling Dice..."<<endl;
                     cout<<"You rolled: "<<die1<<" and "<<die2<<endl;
-                    cout<<endl;
                     x[i].points=die1+die2;
                     x[i].pos=x[i].pos+x[i].points;
                     cout<<"Current Place: "<<x[i].pos<<endl;
+                    cout<<endl;
                     if(x[i].pos>=100){
                         cout<<"You win!"<<endl;
                         cout<<endl;
                         x[i].wins++;
+                        cout<<"Current wins for Player "<<i+1<<": "<<x[i].wins<<endl;
                         break;
                     }   
                     break;
