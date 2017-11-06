@@ -17,6 +17,9 @@
 
 using namespace std;
 
+//Function Prototypes
+void clear(Player *x,int);
+
 int main(int argc, char** argv) {
     //Random Number Seed
     srand(static_cast<unsigned int>(time(0)));
@@ -33,6 +36,7 @@ int main(int argc, char** argv) {
     Player *x;              //Pointer to array for structure
     int users;              //Number of Users 
     int roll;               //Used for switch statement in turns
+    char restart;           //Used to get response when game ends
     
     
     cout<<game<<endl;
@@ -70,6 +74,7 @@ int main(int argc, char** argv) {
                         cout<<endl;
                         x[i].wins++;
                         cout<<"Current wins for Player "<<i+1<<": "<<x[i].wins<<endl;
+                        cout<<endl;
                         break;
                     }   
                     break;
@@ -78,18 +83,37 @@ int main(int argc, char** argv) {
                     cout<<"You Must Enter 1 to Roll Dice"<<endl;
                 }
             }
+            if(x[i].pos>=100){
+                cout<<"Restart and Play Again? Y for Yes and N for No "<<endl;
+                cin>>restart;
+                if(restart=='Y'){
+                    clear(x,users);
+                    cout<<endl;
+                }
+                else{
+                    cout<<"Quitting Game... :("<<endl;
+                    return 0;
+                }             
+            }
         }
 
         
     }while(play=true);                                                                                                                     
     
     //Writing points to a binary file
-    fout.open("Stats.dat",ios::out|ios::binary);
-    fout.put(points);
-    
-    
+    /*for(int i=0;i<users;i++){
+        fout.open("Stats.dat",ios::out|ios::binary);
+        fout.put(game);
+        fout.put(x[i].name);
+        fout.put(x[i].wins);
+    }
+    */
     return 0;
 }
 
-
 //Functions with Structures
+void clear(Player *x,int n){
+    for(int i=0;i<n;i++){
+        x[i].pos=0;
+    }
+}
