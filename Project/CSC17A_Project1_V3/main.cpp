@@ -32,6 +32,7 @@ int main(int argc, char** argv) {
     char const *game{"Snakes and Ladders!"};    //Name of the game in C string
     Player *x;              //Pointer to array for structure
     int users;              //Number of Users 
+    int roll;               //Used for switch statement in turns
     
     
     cout<<game<<endl;
@@ -51,25 +52,33 @@ int main(int argc, char** argv) {
  
     
     do{
-        cout<<"Rolling Dice..."<<endl;
-        cout<<"You rolled: "<<die1<<" and "<<die2<<endl;
-        cout<<endl;
-        
-        points=die1+die2;
-        
-        pos=pos+points;
-        
-        
-        
-        cout<<"Place: "<<pos<<endl;
-        
-        if(pos>=100){
-            cout<<"You win!"<<endl;
-            cout<<endl;
-            play=false;
-            break;
+        for(int i=0;i<users;i++){
+            cout<<"Player "<<i+1<<" Turn: "<<endl;
+            cout<<"Enter 1 to Roll Dice: ";
+            cin>>roll;
+            
+            switch(roll){
+                case 1:{
+                    cout<<"Rolling Dice..."<<endl;
+                    cout<<"You rolled: "<<die1<<" and "<<die2<<endl;
+                    cout<<endl;
+                    x[i].points=die1+die2;
+                    x[i].pos=x[i].pos+x[i].points;
+                    cout<<"Current Place: "<<x[i].pos<<endl;
+                    if(x[i].pos>=100){
+                        cout<<"You win!"<<endl;
+                        cout<<endl;
+                        x[i].wins++;
+                        break;
+                    }   
+                    break;
+                }
+                default:{
+                    cout<<"You Must Enter 1 to Roll Dice"<<endl;
+                }
+            }
         }
-        
+
         
     }while(play=true);                                                                                                                     
     

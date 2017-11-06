@@ -13,11 +13,10 @@
 using std::string;
 
 struct Player{
-    int pos; //Position of player on the board
+    int pos=0; //Position of player on the board
     string name;    //Name of Player
-    int points;     //Points the player gets from dice
-    
-    
+    int points=0;     //Points the player gets from dice
+    int wins=0;       //The wins a player has in a session
 };
 
 #endif /* PLAYER_H */
