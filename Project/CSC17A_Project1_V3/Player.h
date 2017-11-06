@@ -20,4 +20,3 @@ struct Player{
 };
 
 #endif /* PLAYER_H */
-
