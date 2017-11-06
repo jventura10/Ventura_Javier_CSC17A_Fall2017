@@ -12,6 +12,7 @@
 #include <fstream>  // Input and Output to Files
 #include <string.h>   // String Library
 #include <cstring>    // C String Library
+#include <ctime>      // Time Library   
 
 #include "Player.h"     // Include Player Header File with Player Structure
 
