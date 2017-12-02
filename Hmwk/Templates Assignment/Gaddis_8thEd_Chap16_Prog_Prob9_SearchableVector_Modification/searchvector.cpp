@@ -16,7 +16,7 @@ using namespace std;
 template <class T>
 SearchV<T>::SearchV(const SearchV &obj):SimpleV<T>(obj.size()){
     for(int i=0;i<this->size();i++){
-        this->operator [](i)=obj[i];
+        this->operator[](i)=obj[i];
     }
 }
 
@@ -26,11 +26,11 @@ int SearchV<T>::FindIt(const T item){
     bool found=false;
     while(!found && first<=last){
         middle=(first+last)/2;
-        if(getEle(middle)==item){
+        if(SimpleV<T>::getEle(middle)==item){
             found=true;
             position=middle;
         }
-        else if(getEle(middle>item)){
+        else if(SimpleV<T>::getEle(middle)>item){
             last=middle-1;
         }
         else{

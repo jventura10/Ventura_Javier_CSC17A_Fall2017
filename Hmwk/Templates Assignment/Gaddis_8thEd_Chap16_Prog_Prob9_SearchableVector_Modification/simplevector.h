@@ -27,7 +27,7 @@ class SimpleV{
         int size()const{
             return arrSz;
         }
-        T getEle(int sub);
+        T getEle(int position);
         T &operator[](const int &);
 };
 
