@@ -21,4 +21,3 @@ public:
 };
 
 #endif /* TESTSCORES_H */
-
